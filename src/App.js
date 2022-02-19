@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import key from './key.json'
+import { AnimeCard } from './AnimeCard';
 
 function App() {
 
@@ -25,7 +26,7 @@ function App() {
       <font size={100} className="sadgers">AniSomething</font>
       {
         dataReceived ? animeList.map((anime,i)=>{
-          return <h1 key={anime.node.id}>{anime.node.title}</h1>
+          return <AnimeCard anime={anime.node} rank={anime.ranking.rank}/>
         }) : <h1>Loading...</h1>
       }
     </div>

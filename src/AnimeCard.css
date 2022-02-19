@@ -1,0 +1,11 @@
+.cardroot {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 20px;
+}
