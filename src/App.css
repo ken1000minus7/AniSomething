@@ -1,11 +1,12 @@
 .App {
   text-align: center;
-  background-color: rgb(235, 134, 2);
   color: white;
 }
 
-.sadgers {
+.title {
   font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  size: 500px;
 }
 .App-logo {
   height: 40vmin;

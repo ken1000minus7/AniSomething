@@ -8,8 +8,9 @@ export const AnimeCard = ({anime,rank}) => {
             <img src={anime.main_picture.medium} alt={anime.title} height={200}/>
             <div className='content'>
                 <h1>{anime.title}</h1>
+                {/* <p>{anime.num_episodes==1 ? "1 episode": `${anime.num_episodes} episodes`}</p> */}
             </div>
-            <h1>{anime.rating}</h1>
+            <h1>{anime.mean}</h1>
         </div>
     )
 }
