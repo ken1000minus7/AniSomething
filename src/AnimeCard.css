@@ -2,10 +2,19 @@
     display: flex;
     flex-direction: row;
     margin: 10px 20px;
+    border: 5px solid gray;
+    border-radius: 20px;
+    padding: 10px 5px;
+    background-color: black;
 }
 
 .content {
     display: flex;
     flex-direction: column;
     margin: 5px 20px;
+}
+
+.rank {
+    size:30px;
+    margin: 10px 20px;
 }

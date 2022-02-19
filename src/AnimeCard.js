@@ -9,6 +9,7 @@ export const AnimeCard = ({anime,rank}) => {
             <div className='content'>
                 <h1>{anime.title}</h1>
             </div>
+            <h1>{anime.rating}</h1>
         </div>
     )
 }
