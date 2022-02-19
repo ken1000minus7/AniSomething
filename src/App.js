@@ -1,23 +1,33 @@
+import React,{useState,useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import key from './key.json'
 
 function App() {
+
+  const [dataReceived,setDataReceived]= useState(false)
+  const [animeList,setAnimeList] = useState([])
+
+  useEffect(()=>{
+    fetch(`https://cors-anywhere.herokuapp.com/api.myanimelist.net:443/v2/anime/ranking?ranking_type=all&client_id=${key.id}&client_secret=${key.secret}`,
+    {
+      method:"GET",
+      headers: { "X-MAL-CLIENT-ID": key.id,  "X-Requested-With": "XMLHttpRequest"
+}
+    })
+    .then(response => response.json())
+    .then(jsonResponse => setAnimeList(jsonResponse.data))
+    .catch(error=> console.error(error))
+    .finally(()=> setDataReceived(true))
+  },[])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <font size={100} className="sadgers">AniSomething</font>
+      {
+        dataReceived ? animeList.map((anime,i)=>{
+          return <h1 key={anime.node.id}>{anime.node.title}</h1>
+        }) : <h1>Loading...</h1>
+      }
     </div>
   );
 }

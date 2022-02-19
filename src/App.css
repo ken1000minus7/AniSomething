@@ -1,7 +1,12 @@
 .App {
   text-align: center;
+  background-color: orange;
+  color: white;
 }
 
+.sadgers {
+  font-family: 'Courier New', Courier, monospace;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
