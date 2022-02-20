@@ -6,7 +6,9 @@
 .title {
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
-  size: 500px;
+  text-align: center;
+  align-items: center;
+  font-size: 100px;
 }
 .App-logo {
   height: 40vmin;

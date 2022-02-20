@@ -7,15 +7,45 @@
     padding: 10px 5px;
     background-color: black;
     box-shadow: 10px 10px;
+    align-items: center;
 }
 
 .content {
     display: flex;
     flex-direction: column;
+    flex: auto;
     margin: 5px 20px;
 }
 
 .rank {
     size:30px;
     margin: 10px 20px;
+}
+
+.score {
+    margin-right: 20px;
+}
+
+@keyframes ripple{
+    to{
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.cardroot:hover{
+    background-color: white;
+    color: black;
+}
+
+.anime_title{
+    color: inherit;
+    font-size: 45px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.anime_title:hover{
+    text-decoration: underline;
+    color: aqua;
 }

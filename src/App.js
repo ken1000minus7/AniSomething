@@ -9,7 +9,7 @@ function App() {
   const [animeList,setAnimeList] = useState([])
 
   useEffect(()=>{
-    fetch(`https://cors-anywhere.herokuapp.com/api.myanimelist.net:443/v2/anime/ranking?ranking_type=all&limit=100&client_id=${key.id}&client_secret=${key.secret}`,
+    fetch(`https://cors-anywhere.herokuapp.com/api.myanimelist.net:443/v1/anime/ranking?ranking_type=all&limit=100&fields=id,name,main_picture,synopsis,num_episodes,mean&client_id=${key.id}&client_secret=${key.secret}`,
     {
       method:"GET",
       headers: { "X-MAL-CLIENT-ID": key.id,  "X-Requested-With": "XMLHttpRequest"
@@ -22,7 +22,7 @@ function App() {
   },[])
   return (
     <div className="App">
-      <font size={200} className="title">AniSomething</font>
+      <span className="title">AniSomething</span>
       {
         dataReceived ? animeList.map((anime,i)=>{
           return <AnimeCard anime={anime.node} rank={anime.ranking.rank}/>
