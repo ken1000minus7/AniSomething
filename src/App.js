@@ -17,7 +17,7 @@ function App() {
         <Route exact path="/TopAll" element={<TopAll />} />
         <Route exact path="/TopAnime" element={<TopAnime/>} />
         <Route exact path="/TopMovie" element={<TopMovie />} />
-        <Route exact path="/" element={<TopAll />} />
+        <Route exact path="/AniSomething" element={<TopAll />} />
       </Routes>
     </div>
   );
