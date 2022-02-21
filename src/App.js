@@ -1,33 +1,24 @@
-import React,{useState,useEffect} from 'react';
+import React from 'react';
 import './App.css';
-import key from './key.json'
-import { AnimeCard } from './AnimeCard';
+import { NavBar } from './components/NavBar/NavBar'
+import { TopAll } from './pages/TopAll'
+import { TopAnime } from './pages/TopAnime';
+import { TopMovie } from './pages/TopMovie';
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
 
-  const [dataReceived,setDataReceived]= useState(false)
-  const [animeList,setAnimeList] = useState([])
-
-  useEffect(()=>{
-    fetch(`https://cors-anywhere.herokuapp.com/api.myanimelist.net:443/v1/anime/ranking?ranking_type=all&limit=100&fields=id,name,main_picture,synopsis,num_episodes,mean&client_id=${key.id}&client_secret=${key.secret}`,
-    {
-      method:"GET",
-      headers: { "X-MAL-CLIENT-ID": key.id,  "X-Requested-With": "XMLHttpRequest"
-}
-    })
-    .then(response => response.json())
-    .then(jsonResponse => setAnimeList(jsonResponse.data))
-    .catch(error=> console.error(error))
-    .finally(()=> setDataReceived(true))
-  },[])
+  
   return (
     <div className="App">
       <span className="title">AniSomething</span>
-      {
-        dataReceived ? animeList.map((anime,i)=>{
-          return <AnimeCard anime={anime.node} rank={anime.ranking.rank}/>
-        }) : <h1>Loading...</h1>
-      }
+      <NavBar />
+      <Routes>
+        <Route exact path="/TopAll" element={<TopAll />} />
+        <Route exact path="/TopAnime" element={<TopAnime/>} />
+        <Route exact path="/TopMovie" element={<TopMovie />} />
+        <Route exact path="/" element={<TopAll />} />
+      </Routes>
     </div>
   );
 }
