@@ -6,7 +6,7 @@
     border-radius: 20px;
     padding: 10px 5px;
     background-color: black;
-    box-shadow: 10px 10px;
+    box-shadow: 10px 10px gray;
     align-items: center;
 }
 
@@ -42,7 +42,7 @@
 
 .anime_title{
     color: inherit;
-    font-size: 45px;
+    font-size: 35px;
     font-weight: bold;
     text-decoration: none;
 }
@@ -61,4 +61,8 @@
 .score_img{
     height: 40px;
     margin-right: 10px;
+}
+
+.anime_img {
+    height: 150px;
 }

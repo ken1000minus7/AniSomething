@@ -11,7 +11,7 @@ function App() {
   
   return (
     <div className="App">
-      <span className="title">AniSomething</span>
+      <div className="title">AniSomething</div>
       <NavBar />
       <Routes>
         <Route exact path="/TopAll" element={<TopAll />} />
