@@ -14,6 +14,9 @@ export const NavBar = ()=>{
             <li>
                 <Link to="/TopMovie" className="navbar_item">Top Movies</Link>
             </li>
+            <li>
+                <Link to="/TopAiring" className="navbar_item">Top Airing</Link>
+            </li>
         </ul>
     )
 }

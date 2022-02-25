@@ -1,4 +1,5 @@
 import React from 'react'
+import { Navigate } from 'react-router-dom'
 import './AnimeCard.css'
 
 export const AnimeCard = ({anime,rank}) => {
@@ -6,7 +7,7 @@ export const AnimeCard = ({anime,rank}) => {
     return (
         <div className='cardroot'>
             <h1 className='rank'>#{rank}</h1>
-            <img src={anime.main_picture.medium} alt={anime.title} className="anime_img"/>
+            <img src={anime.main_picture ? anime.main_picture.medium : ""} alt={anime.title} className="anime_img"/>
             <div className='content'>
                 <a href={`https://myanimelist.net/anime/${anime.id}/`} className='anime_title' target={"_blank"} rel="noreferrer">{anime.title}</a>
                 <p>{anime.num_episodes==1 ? "Movie": anime.num_episodes==0 ? "? episodes" : `${anime.num_episodes} episodes`}</p>
