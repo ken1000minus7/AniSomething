@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React,{useState,useEffect, useCallback} from "react";
 import { AnimeCard } from '../AnimeCard/AnimeCard'
 import key from '../../key.json'
 
@@ -6,7 +6,7 @@ export const AnimeList = ({type,limit=500})=>{
   const [dataReceived,setDataReceived]= useState(false)
   const [animeList,setAnimeList] = useState([])
 
-  useEffect(()=>{
+  const fetchAnimeList = useCallback(()=>{
     fetch(`https://cors-anywhere.herokuapp.com/api.myanimelist.net:443/v1/anime/ranking?ranking_type=${type}&limit=${limit}&fields=id,name,main_picture,synopsis,num_episodes,mean&client_id=${key.id}&client_secret=${key.secret}`,
     {
       method:"GET",
@@ -16,7 +16,10 @@ export const AnimeList = ({type,limit=500})=>{
     .then(jsonResponse => setAnimeList(jsonResponse.data))
     .catch(error=> console.error(error))
     .finally(()=> setDataReceived(true))
-  },[])
+  })
+  useEffect(()=>{
+    fetchAnimeList()
+  },[fetchAnimeList])
 
   return (
       <div>
