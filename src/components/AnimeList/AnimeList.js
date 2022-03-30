@@ -1,12 +1,12 @@
 import React,{useState,useEffect} from "react";
 import { AnimeCard } from '../AnimeCard/AnimeCard'
 
-export const AnimeList = ({type="",limit=500})=>{
+export const AnimeList = ({type="",limit=500,filter=""})=>{
   const [dataReceived,setDataReceived]= useState(false)
   const [animeList,setAnimeList] = useState([])
 
   useEffect(()=>{
-    fetch(`https://api.jikan.moe/v4/top/anime?type=${type}&limit=${limit}`,
+    fetch(`https://api.jikan.moe/v4/top/anime?type=${type}&limit=${limit}&filter=${filter}`,
     {
       method:"GET"
     })
@@ -21,7 +21,7 @@ export const AnimeList = ({type="",limit=500})=>{
       <div>
           {
         dataReceived ? animeList.map((anime,i)=>{
-          return <AnimeCard anime={anime} id={i}/>
+          return <AnimeCard anime={anime} rank={i+1}/>
         }) : <h1>Loading...</h1>
         }
       </div>

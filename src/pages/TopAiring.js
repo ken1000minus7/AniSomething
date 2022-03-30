@@ -5,7 +5,7 @@ export const TopAiring = ()=>{
 
   return (
       <div>
-         <AnimeList type="airing" limit={100}/>
+         <AnimeList filter="airing" limit={100}/>
       </div>
   )
 }
