@@ -8,6 +8,8 @@
     background-color: black;
     box-shadow: 10px 10px gray;
     align-items: center;
+    text-decoration: none;
+    color: white;
 }
 
 .content {
@@ -28,12 +30,6 @@
     text-align: right;
 }
 
-@keyframes ripple{
-    to{
-        transform: scale(4);
-        opacity: 0;
-    }
-}
 
 .cardroot:hover{
     background-color: white;

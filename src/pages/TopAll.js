@@ -5,7 +5,8 @@ export const TopAll = ()=>{
 
   return (
       <div>
-         <AnimeList />
+        <h1>Top All</h1>
+        <AnimeList />
       </div>
   )
 }

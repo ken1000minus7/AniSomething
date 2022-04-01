@@ -5,11 +5,10 @@ import { TopAll } from './pages/TopAll'
 import { TopAnime } from './pages/TopAnime';
 import { TopMovie } from './pages/TopMovie';
 import { TopAiring } from './pages/TopAiring';
+import { AnimePage } from './pages/AnimePage';
 import { Route, Routes } from 'react-router-dom'
 
 function App() {
-
-  
   return (
     <div className="App">
       <div className="title">AniSomething</div>
@@ -20,6 +19,7 @@ function App() {
         <Route exact path="/TopMovie" element={<TopMovie />} />
         <Route exact path="/TopAiring" element={<TopAiring />} />
         <Route exact path="/AniSomething" element={<TopAll />} />
+        <Route exact path="/anime/:id" element={<AnimePage />} />
       </Routes>
     </div>
   );

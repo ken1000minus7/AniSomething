@@ -5,7 +5,8 @@ export const TopMovie = ()=>{
 
   return (
       <div>
-         <AnimeList type="movie"/>
+        <h1>Top Movies</h1>
+        <AnimeList type="movie"/>
       </div>
   )
 }
