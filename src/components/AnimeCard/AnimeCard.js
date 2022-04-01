@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import './AnimeCard.css'
 
 export const AnimeCard = ({anime,rank}) => {
-    console.log(anime)
     return (
         <Link to={`/anime/${anime.mal_id}`} className='cardroot'>
             <h1 className='rank'>#{rank}</h1>
