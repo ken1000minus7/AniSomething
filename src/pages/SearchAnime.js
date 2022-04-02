@@ -1,4 +1,3 @@
-import { TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { AnimeList } from "../components/AnimeList/AnimeList";
 import { SearchBar } from "../components/SearchBar/SearchBar";
