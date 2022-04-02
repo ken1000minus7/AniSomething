@@ -1,7 +1,11 @@
 import React from "react";
 import './AnimeDetails.css'
+import { Genre } from "./Genre/Genre";
 
 export const AnimeDetails = ({anime})=>{
+    var backdrop = anime.trailer.images.maximum_image_url ? anime.trailer.images.maximum_image_url : anime.images.jpg.large_image_url
+    let root = document.querySelector(":root");
+    root.style.setProperty("--imgUrl",`url('${backdrop}')`)
     return(
         <div className="details_root">
             <div className="anime_details_header">
@@ -38,6 +42,14 @@ export const AnimeDetails = ({anime})=>{
                             <p className="details_header_section_title">Duration</p>
                             <p className="details_header_section_value">{anime.duration}</p>
                         </div>
+                    </div>
+                    <p className="details_header_section_title">Genre</p>
+                    <div className="details_genre">
+                        {
+                            anime.genres.map((genre,i)=>{
+                                return <Genre genre={genre} id={i}/>
+                            })
+                        }
                     </div>
                 </div>
             </div>

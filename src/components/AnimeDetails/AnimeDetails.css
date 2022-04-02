@@ -1,3 +1,7 @@
+:root{
+    --imgUrl : "";
+}
+
 p{
     margin: 0px;
 }
@@ -5,18 +9,34 @@ p{
     display: flex;
     flex-direction: column;
     text-align: left;
-    margin: 10px 30px;
 }
 
 .anime_details_header{
     display: flex;
     flex-direction: row;
     align-items: center;
+    position: relative;
+    padding: 10px 30px;
+}
+
+.anime_details_header::before{
+    content: "";
+    background-image: var(--imgUrl);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.45;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    position: absolute;
+    z-index: -1;
 }
 
 .anime_details_img{
     height: 400px;
-    padding: 20px 50px 0px 0px;
+    padding: 10px 50px 10px 0px;
 }
 
 .details_header_info{
@@ -66,4 +86,9 @@ p{
 
 .details_header_section_value{
     font-size: 20px;
+}
+
+.details_genre{
+    display: flex;
+    flex-direction: row;
 }
