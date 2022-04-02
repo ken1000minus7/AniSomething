@@ -36,6 +36,9 @@ export const NavBar = ()=>{
             <li>
                 <Link to="/TopAiring" className="navbar_item">Top Airing</Link>
             </li>
+            <li>
+                <Link to="/search/anime" className="navbar_item">Search Anime</Link>
+            </li>
         </ul>
     )
 }

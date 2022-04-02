@@ -7,6 +7,7 @@ import { TopMovie } from './pages/TopMovie';
 import { TopAiring } from './pages/TopAiring';
 import { AnimePage } from './pages/AnimePage';
 import { Route, Routes } from 'react-router-dom'
+import { SearchAnime } from './pages/SearchAnime';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/TopAiring" element={<TopAiring />} />
         <Route exact path="/AniSomething" element={<TopAll />} />
         <Route exact path="/anime/:id" element={<AnimePage />} />
+        <Route exact path="/search/anime" element={<SearchAnime/>}/>
       </Routes>
     </div>
   );
