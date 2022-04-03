@@ -37,7 +37,7 @@ export const NavBar = ()=>{
                 <Link to="/TopAiring" className="navbar_item">Top Airing</Link>
             </li>
             <li>
-                <Link to="/search/anime" className="navbar_item">Search Anime</Link>
+                <Link to="/search/anime" className="navbar_item" onClick={()=> localStorage.clear()}>Search Anime</Link>
             </li>
         </ul>
     )

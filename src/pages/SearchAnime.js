@@ -4,6 +4,11 @@ import { SearchBar } from "../components/SearchBar/SearchBar";
 
 export const SearchAnime = ()=>{
     var localList = localStorage.getItem("searchList")
+    if(localList==="undefined")
+    {
+        localStorage.clear()
+        localList=null
+    }
     var localQuery = localStorage.getItem("searchQuery")
     const [searchList,setSearchList] = useState(localList ? JSON.parse(localList) : null)
     const [query,setQuery] = useState(localQuery ? localQuery : null)
@@ -22,11 +27,15 @@ export const SearchAnime = ()=>{
     },[query])
     return (
         <div>
-            <h1>Search Anime</h1>
             <SearchBar setQuery={setQuery} />
             {
-                searchList ? <AnimeList animeList={searchList} />
-                : <h1>No result</h1>
+                query && query!=="" && searchList && searchList.length>0 ? <AnimeList animeList={searchList} />
+                :( (!query || query==="") && (!searchList || searchList.length===0) ? (
+                    <div>
+                        <h1>Search Anime</h1>
+                        <img alt={""} height="350" src="https://www.pinclipart.com/picdir/big/149-1490404_clipart-computer-magnifying-glass-anime-magnifying-glass-png.png" />
+                    </div>
+                ) : <h1>No Result</h1> )
             }
         </div>
     )
