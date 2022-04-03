@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import './NavBar.css'
 
 export const NavBar = ()=>{
-    const [topPopupOpen,setTopPopupOpen] = useState(false)
+    // const [topPopupOpen,setTopPopupOpen] = useState(false)
     return (
         <ul role="navigation" className="navbar_list">
             {/* <li 

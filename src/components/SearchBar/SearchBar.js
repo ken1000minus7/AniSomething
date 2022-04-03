@@ -18,7 +18,7 @@ export const SearchBar = ({setQuery})=>{
                 }}
                 onChange={(e)=>{
                     var currTime = new Date().getTime()
-                    if(currTime-time>=100)
+                    if(currTime-time>=200)
                     {
                         time=currTime
                         setQuery(e.target.value.toLowerCase())

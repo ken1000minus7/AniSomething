@@ -13,3 +13,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@media screen and (max-width: 734px) {
+  body{
+    position: absolute;
+    max-width: 137vh;
+  }
+}

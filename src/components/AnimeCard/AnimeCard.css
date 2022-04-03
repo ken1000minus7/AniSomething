@@ -21,7 +21,7 @@
 }
 
 .rank {
-    size:30px;
+    font-size:30px;
     margin: 10px 20px;
 }
 
@@ -43,11 +43,6 @@
     text-decoration: none;
 }
 
-.anime_title:hover{
-    text-decoration: underline;
-    color: aqua;
-}
-
 .score_content{
     display: flex;
     flex-direction: row;
@@ -61,4 +56,33 @@
 
 .anime_img {
     height: 120px;
+}
+
+@media screen and (max-width: 734px) {
+    .cardroot{
+        min-width: 100%;
+        margin: 25px 10px;
+    }
+
+    .anime_title{
+        font-size: 20px;
+    }
+
+    .anime_img{
+        height: 100px;
+    }
+
+    .score_img{
+        height: 25px;
+        margin-right: 5px;
+    }
+
+    .rank{
+        font-size: 20px;
+    }
+
+    .score{
+        font-size: 20px;
+    }
+    
 }

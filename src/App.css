@@ -45,3 +45,9 @@
     transform: rotate(360deg);
   }
 }
+
+@media screen and (max-width: 734px) {
+  .title{
+    font-size: 60px;
+  }
+}

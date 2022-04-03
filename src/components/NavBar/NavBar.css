@@ -21,3 +21,14 @@
     background-color: white;
     color: black;
 }
+
+@media screen and (max-width: 734px) {
+    .navbar_list{
+        min-width: 100%;
+    }
+
+    .navbar_item{
+        padding: 15px;
+        font-size: 15px;
+    }
+}
