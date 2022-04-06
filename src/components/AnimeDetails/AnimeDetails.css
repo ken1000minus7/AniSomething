@@ -11,6 +11,7 @@ p{
     text-align: left;
 }
 
+
 .anime_details_header{
     display: flex;
     flex-direction: row;
@@ -47,7 +48,12 @@ p{
 .anime_details_title{
     font-size: 50px;
     font-weight: bold;
-    margin: 20px 0px;
+    margin: 10px 0px;
+}
+
+.anime_details_type{
+    margin: 0px 0px 20px 0px;
+    font-size: 25px;
 }
 
 .details_score_header{
@@ -91,4 +97,8 @@ p{
 .details_genre{
     display: flex;
     flex-direction: row;
+}
+
+.details{
+    margin: 5px 30px;
 }
