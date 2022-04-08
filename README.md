@@ -1,3 +1,3 @@
 # AniSomething
 
-MAL ripoff or something, idk sadge
+MAL ripoff or something, idk
