@@ -1,0 +1,15 @@
+.character_card_root{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px 10px;
+}
+
+.character_card_image{
+    height: 200px;
+}
+
+.character_card_name{
+    text-align: center;
+    font-size: 18px;
+}

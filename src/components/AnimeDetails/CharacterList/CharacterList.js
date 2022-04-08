@@ -5,10 +5,10 @@ import './CharacterList.css'
 
 export const CharacterList = ({characterList})=>{
     return (
-        <>
-        {characterList.map(({character,i})=>{
-            return <CharacterCard character={character} />
-        })}
-        </>
+        <ScrollMenu>
+            {characterList.map(({character,i})=>{
+                return <CharacterCard character={character} />
+            })}
+        </ScrollMenu>
     )
 }
