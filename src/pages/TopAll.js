@@ -19,7 +19,7 @@ export const TopAll = ()=>{
   },[])
 
   return (
-      <div>
+      <div className="page">
         <h1>Top All</h1>
         {
           dataReceived ? <AnimeList animeList={animeList} /> : <Loading />

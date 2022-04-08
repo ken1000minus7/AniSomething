@@ -19,7 +19,7 @@ export const TopAiring = ()=>{
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
   return (
-      <div>
+      <div className="page">
         <h1>Top Airing</h1>
         {
           dataReceived ? <AnimeList animeList={animeList} /> : <Loading />

@@ -21,9 +21,9 @@ export const AnimePage = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     return (
-        <>
+        <div className="page">
             {anime ? <AnimeDetails anime={anime} /> : <Loading />}
-        </>
+        </div>
     )
 }
 

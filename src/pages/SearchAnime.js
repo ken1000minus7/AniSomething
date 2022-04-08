@@ -26,7 +26,7 @@ export const SearchAnime = ()=>{
         .catch(error => console.error(error))
     },[query])
     return (
-        <div>
+        <div className="page">
             <SearchBar setQuery={setQuery} />
             {
                 query && query!=="" && searchList && searchList.length>0 ? <AnimeList animeList={searchList} />

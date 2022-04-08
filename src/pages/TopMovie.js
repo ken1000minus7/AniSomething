@@ -19,7 +19,7 @@ export const TopMovie = ()=>{
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
   return (
-      <div>
+      <div className="page">
         <h1>Top Movies</h1>
         {
           dataReceived ? <AnimeList animeList={animeList} /> : <Loading />
