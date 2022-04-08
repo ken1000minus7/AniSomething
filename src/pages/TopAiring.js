@@ -1,5 +1,6 @@
 import React,{useEffect,useState} from "react";
 import { AnimeList } from "../components/AnimeList/AnimeList";
+import { Loading } from "../components/Loading/Loading";
 
 export const TopAiring = ()=>{
 
@@ -21,7 +22,7 @@ export const TopAiring = ()=>{
       <div>
         <h1>Top Airing</h1>
         {
-          dataReceived ? <AnimeList animeList={animeList} /> : <h1>Loading...</h1>
+          dataReceived ? <AnimeList animeList={animeList} /> : <Loading />
         }
       </div>
   )

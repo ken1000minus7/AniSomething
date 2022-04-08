@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { AnimeDetails } from "../components/AnimeDetails/AnimeDetails";
+import { Loading } from "../components/Loading/Loading";
 
 export const AnimePage = () => {
     const { id } = useParams()
@@ -21,7 +22,7 @@ export const AnimePage = () => {
     }, [])
     return (
         <>
-            {anime ? <AnimeDetails anime={anime} /> : <h1>Loading...</h1>}
+            {anime ? <AnimeDetails anime={anime} /> : <Loading />}
         </>
     )
 }

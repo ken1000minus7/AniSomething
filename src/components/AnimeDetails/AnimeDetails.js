@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Loading } from "../Loading/Loading";
 import './AnimeDetails.css'
 import { CharacterList } from "./CharacterList/CharacterList";
 import { Genre } from "./Genre/Genre";
@@ -83,7 +84,7 @@ export const AnimeDetails = ({anime})=>{
                 <h3 className="details_characters_header">Characters</h3>
                 {
                     characterList ? <CharacterList characterList={characterList} />
-                    : <h1>Loading...</h1>
+                    : <Loading />
                 }
             </div>
         </div>

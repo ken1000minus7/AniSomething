@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from "react";
 import { AnimeList } from "../components/AnimeList/AnimeList";
+import { Loading } from "../components/Loading/Loading";
 
 export const TopAnime = ()=>{
   const [dataReceived,setDataReceived]= useState(false)
@@ -21,7 +22,7 @@ export const TopAnime = ()=>{
       <div>
         <h1>Top Anime</h1>
         {
-          dataReceived ? <AnimeList animeList={animeList} /> : <h1>Loading...</h1>
+          dataReceived ? <AnimeList animeList={animeList} /> : <Loading />
         }
       </div>
   )
