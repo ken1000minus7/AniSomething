@@ -3,12 +3,14 @@ import { Loading } from "../Loading/Loading";
 import './AnimeDetails.css'
 import { CharacterList } from "./CharacterList/CharacterList";
 import { Genre } from "./Genre/Genre";
+import { StaffList } from "./StaffList/StaffList";
 
 export const AnimeDetails = ({anime})=>{
     var backdrop = anime.trailer.images.maximum_image_url ? anime.trailer.images.maximum_image_url : anime.images.jpg.large_image_url
     let root = document.querySelector(":root");
     root.style.setProperty("--imgUrl",`url('${backdrop}')`)
     const [characterList , setCharacterList] = useState(null)
+    const [staffList , setStaffList] = useState(null)
 
     useEffect(()=>{
         fetch(`https://api.jikan.moe/v4/anime/${anime.mal_id}/characters`,
@@ -19,7 +21,18 @@ export const AnimeDetails = ({anime})=>{
         .then(jsonResponse => setCharacterList(jsonResponse.data))
         .catch(error => console.error(error))
         .finally(() => {
-            console.log(anime)
+            console.log("characterlist arrived")
+        })
+
+        fetch(`https://api.jikan.moe/v4/anime/${anime.mal_id}/staff`,
+        {
+            method: "GET"
+        })
+        .then(response => response.json())
+        .then(jsonResponse => setStaffList(jsonResponse.data))
+        .catch(error => console.error(error))
+        .finally(() => {
+            console.log("stafflist arrived")
         })
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
@@ -84,6 +97,13 @@ export const AnimeDetails = ({anime})=>{
                 <h3 className="details_characters_header">Characters</h3>
                 {
                     characterList ? <CharacterList characterList={characterList} />
+                    : <Loading />
+                }
+            </div>
+            <div className="details_staff details">
+                <h3 className="details_staff_header">Staff</h3>
+                {
+                    staffList ? <StaffList staffList={staffList} />
                     : <Loading />
                 }
             </div>

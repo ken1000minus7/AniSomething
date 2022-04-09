@@ -1,15 +1,15 @@
-.character_card_root{
+.staff_card_root{
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 5px 10px;
 }
 
-.character_card_image{
+.staff_card_image{
     height: 180px;
 }
 
-.character_card_name{
+.staff_card_name{
     text-align: center;
     font-size: 17px;
     font-weight: bold;
