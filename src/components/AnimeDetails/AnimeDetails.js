@@ -100,6 +100,14 @@ export const AnimeDetails = ({anime})=>{
                     : <Loading />
                 }
             </div>
+            {
+                anime.trailer.embed_url ? 
+                <div className="details_trailer details">
+                    <h3 className="details_trailer_header">Trailer</h3>
+                    <iframe className="anime_details_trailer" src={anime.trailer.embed_url} title="trailer" />
+                </div>
+                : <></>
+            }
             <div className="details_staff details">
                 <h3 className="details_staff_header">Staff</h3>
                 {
