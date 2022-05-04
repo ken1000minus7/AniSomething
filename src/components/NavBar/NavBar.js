@@ -24,17 +24,22 @@ export const NavBar = ()=>{
                     </ul>)
                 }) : null}
             </li> */}
-            <li>
-                <Link to="/TopAll" className="navbar_item">Top all</Link>
-            </li>
-            <li>
-                <Link to="/TopAnime" className="navbar_item">Top Animes</Link>
-            </li>
-            <li>
-                <Link to="/TopMovie" className="navbar_item">Top Movies</Link>
-            </li>
-            <li>
-                <Link to="/TopAiring" className="navbar_item">Top Airing</Link>
+            <li className="navbar_item top_item">
+                Top
+                <ul className="top_dropdown">
+                    <li>
+                        <Link to="/TopAll" className="dropdown_item">Top all</Link>
+                    </li>
+                    <li>
+                        <Link to="/TopAnime" className="dropdown_item">Top Animes</Link>
+                    </li>
+                    <li>
+                        <Link to="/TopMovie" className="dropdown_item">Top Movies</Link>
+                    </li>
+                    <li>
+                        <Link to="/TopAiring" className="dropdown_item">Top Airing</Link>
+                    </li>
+                </ul>
             </li>
             <li>
                 <Link to="/search/anime" className="navbar_item" onClick={()=> localStorage.clear()}>Search Anime</Link>
