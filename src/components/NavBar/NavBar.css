@@ -27,11 +27,28 @@
 .top_dropdown{
     list-style-type: none;
     display: none;
+    position: absolute;
+    height: fit-content;
     z-index: 20;
+    margin: 0px;
+    padding: 0px;
 }
 
-.top_item:hover + .top_dropdown{
+.top_item:hover .top_dropdown{
     display: block;
+}
+
+.dropdown_item{
+    text-decoration: none;
+    padding: 5px 0px;
+    background-color: white;
+    color: black;
+    text-align: left;
+}
+
+.dropdown_item:hover{
+    background-color: black;
+    color: white;
 }
 
 @media screen and (max-width: 734px) {
